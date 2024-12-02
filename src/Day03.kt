@@ -37,6 +37,10 @@ fun findAllPartNumbers(array: Array<CharArray>): List<PartNumber> {
         val numbers = Regex("""\d+""").findAll(row.contentToString()) // '\d+' captures single digits, and not whole numbers as expected
             .map(MatchResult::value)
             .toList()
+
+        row.contentToString().println()
+        numbers.println()
+
         numbers.forEach {
             val start = row.contentToString().indexOf(it)
             val end = start + it.length
